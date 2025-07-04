@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WikiNobi</title>
+    <link rel="stylesheet" href="./src/styles/principal.css" />
+    <link rel="icon" href="./src/styles/images/logoconfondo.png" />
+  </head>
+  <body>
+    <div id="bienvenida">
+      <div class="bienvenida-contenido">
+        <img
+          src="./src/styles/images/logosinfondo.png"
+          alt="logo WikiNobi"
+          width="220"
+          height="120"
+        />
+        <h1>¡Bienvenido a WikiNobi!</h1>
+        <button id="btn-entrar">Entrar</button>
+      </div>
+    </div>
+
+    <header>
+      <div class="icono">
+        <a rel="logo-ini" href="./">
+          <img
+            class="logo-ini"
+            src="./src/styles/images/logosinfondo.png"
+            alt="logo WikiNobi"
+            width="220"
+            height="120"
+          />
+        </a>
+      </div>
+
+      <div class="contenedor-header">
+        <div class="barra-busq">
+          <input type="text" id="search" placeholder="Buscar personaje..." />
+        </div>
+
+        <div class="filtros">
+          <select id="ordenarPor">
+            <option value="original">Orden original</option>
+            <option value="alfabetico">Orden alfabético (A-Z)</option>
+            <option value="id">Ordenar por ID (menor a mayor)</option>
+          </select>
+        </div>
+        <div class="navegacion">
+          <nav>
+            <ul>
+              <li>
+                <a href="./index.html"
+                  ><span class="color-head-nav">INICIO</span></a
+                >
+              </li>
+              <li>
+                <a href="/favoritos/favoritos.html"
+                  ><span class="color-head-nav">FAVORITOS</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="character-container"></main>
+    <script>
+      const bienvenida = document.getElementById("bienvenida");
+      const btnEntrar = document.getElementById("btn-entrar");
+      const bienvenidaMostrada = localStorage.getItem("bienvenidaMostrada");
+
+      if (bienvenidaMostrada) {
+        bienvenida.style.display = "none";
+      } else {
+        bienvenida.style.display = "flex";
+      }
+
+      btnEntrar.addEventListener("click", () => {
+        bienvenida.style.display = "none";
+        localStorage.setItem("bienvenidaMostrada", "true");
+      });
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

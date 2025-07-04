@@ -1,0 +1,104 @@
+@import url("./global.css");
+
+#bienvenida {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 1870px;
+  height: 970px;
+  background-image: url(./images/Konoha.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s;
+  position: fixed;
+  overflow: hidden;
+}
+
+#bienvenida::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 1870px;
+  height: 970px;
+  background: rgba(20, 20, 30, 0.55);
+}
+
+.bienvenida-contenido {
+  position: relative;
+  z-index: 2;
+}
+
+.bienvenida-contenido {
+  background: var(--g-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 32px var(--r-color);
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.bienvenida-contenido h1 {
+  color: var(--r-color);
+  background-color: var(--a-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--r-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+#btn-entrar {
+  background: var(--r-color);
+  color: var(--b-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px var(--r-color);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+#btn-entrar:hover {
+  background: var(--n-color);
+  color: var(--o-color);
+  transform: scale(1.05);
+}
+
+#character-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 100px));
+  gap: 10px;
+  padding: 25px;
+}
+
+.favorito-btn {
+  background-color: var(--a-color);
+  border: 1px solid var(--a-color);
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.favorito-btn:hover {
+  background-color: var(--r-color);
+}
